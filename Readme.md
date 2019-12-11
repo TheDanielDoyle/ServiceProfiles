@@ -1,4 +1,4 @@
-# ServiceProfiles
+# Service Profiles
 
 A framework for splitting out the registration of services in IServiceCollection into profiles. No more large Startup.cs classes.
 
