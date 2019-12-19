@@ -20,7 +20,7 @@ loader.LoadFromAssemblies(services, Configuration, Environment, new Assembly[] {
 ````csharp
 public class TestProfile : HostServiceProfile
 {
-    public override void Configure(IServiceProfileContext<IHostEnvironment> context)
+    public override void Configure(IHostServiceProfileContext context)
     {
         context.Services.AddBeer();
     }
