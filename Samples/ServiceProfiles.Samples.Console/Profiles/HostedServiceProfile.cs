@@ -1,11 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
-namespace ServiceProfiles.Samples.Console.Services
+namespace ServiceProfiles.Samples.Console.Profiles
 {
     public class HostedServiceProfile : HostServiceProfile
     {
-        public override void Configure(IServiceProfileContext<IHostEnvironment> context)
+        public override void Configure(IHostServiceProfileContext context)
         {
             context.Services.AddHostedService<MerryChristmasHostedService>();
         }

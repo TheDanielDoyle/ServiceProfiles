@@ -4,6 +4,11 @@ namespace ServiceProfiles
 {
     public abstract class HostServiceProfile : DefaultServiceProfile, IServiceProfile<IHostEnvironment>
     {
-        public abstract void Configure(IServiceProfileContext<IHostEnvironment> context);
+        void IServiceProfile<IHostEnvironment>.Configure(IServiceProfileContext<IHostEnvironment> context)
+        {
+            Configure(context as IHostServiceProfileContext);
+        }
+
+        public abstract void Configure(IHostServiceProfileContext context);
     }
 }

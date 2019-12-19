@@ -1,12 +1,11 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace ServiceProfiles.Samples.Console.Services
+namespace ServiceProfiles.Samples.Console.Profiles
 {
     public class DefaultProfile : HostServiceProfile
     {
-        public override void Configure(IServiceProfileContext<IHostEnvironment> context)
+        public override void Configure(IHostServiceProfileContext context)
         {
             context.Services.AddLogging(builder =>
             {

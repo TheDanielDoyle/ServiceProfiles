@@ -4,7 +4,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace ServiceProfiles
 {
-    public class HostServiceProfileContext : IServiceProfileContext<IHostEnvironment>
+    public class HostServiceProfileContext : IHostServiceProfileContext
     {
         public HostServiceProfileContext(IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
         {
