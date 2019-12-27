@@ -15,7 +15,7 @@ loader.LoadFromAssembly(services, Configuration, Environment, typeof(Program).As
 loader.LoadFromAssemblies(services, Configuration, Environment, new Assembly[] {typeof(Program).Assembly});
 ````
 
-3. Create profile classes that derive from __HostServiceProfileLoader__ and implement the __Configure()__ method.
+3. Create profile classes that derive from __HostServiceProfile__ and implement the __Configure()__ method.
 
 ````csharp
 public class TestProfile : HostServiceProfile
