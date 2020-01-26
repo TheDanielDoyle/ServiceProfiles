@@ -2,7 +2,15 @@
 
 A framework for splitting out the registration of services in __IServiceCollection__ into profiles. No more large Startup.cs classes.
 
-## Quick start
+## Quick start (The easy way)
+
+1. When building an IHost, add __ConfigureServicesWithProfiles()__ method to the __IHostBuilder__ to load __Service Profiles__ in the executing assembly.
+
+````csharp
+IHostBuilder builder = Host.CreateDefaultBuilder(args).ConfigureServicesWithProfiles();
+````               
+
+## Quick start (The manual way)
 
 1. Instantiate a __HostServiceProfileLoader()__ class.
 
