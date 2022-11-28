@@ -3,33 +3,32 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace ServiceProfiles.Samples.Console
+namespace ServiceProfiles.Samples.Console;
+
+public class MerryChristmasHostedService : IHostedService
 {
-    public class MerryChristmasHostedService : IHostedService
+    private Timer timer;
+    private readonly ILogger logger;
+
+    public MerryChristmasHostedService(ILogger<MerryChristmasHostedService> logger)
     {
-        private Timer timer;
-        private readonly ILogger logger;
+        this.logger = logger;
+    }
 
-        public MerryChristmasHostedService(ILogger<MerryChristmasHostedService> logger)
-        {
-            this.logger = logger;
-        }
+    public Task StartAsync(CancellationToken cancellationToken)
+    {
+        this.timer = new Timer(MerryChristmas, null, 0, 2000);
+        return Task.CompletedTask;
+    }
 
-        public Task StartAsync(CancellationToken cancellationToken)
-        {
-            this.timer = new Timer(MerryChristmas, null, 0, 2000);
-            return Task.CompletedTask;
-        }
+    private void MerryChristmas(object state)
+    {
+        this.logger.LogInformation("Merry Christmas!!");
+    }
 
-        private void MerryChristmas(object state)
-        {
-            this.logger.LogInformation("Merry Christmas!!");
-        }
-
-        public Task StopAsync(CancellationToken cancellationToken)
-        {
-            this.timer?.Change(Timeout.Infinite, 0);
-            return Task.CompletedTask;
-        }
+    public Task StopAsync(CancellationToken cancellationToken)
+    {
+        this.timer?.Change(Timeout.Infinite, 0);
+        return Task.CompletedTask;
     }
 }

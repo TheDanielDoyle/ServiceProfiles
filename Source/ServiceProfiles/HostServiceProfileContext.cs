@@ -2,21 +2,20 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace ServiceProfiles
+namespace ServiceProfiles;
+
+public class HostServiceProfileContext : IHostServiceProfileContext
 {
-    public class HostServiceProfileContext : IHostServiceProfileContext
+    public HostServiceProfileContext(IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
     {
-        public HostServiceProfileContext(IServiceCollection services, IConfiguration configuration, IHostEnvironment environment)
-        {
-            Services = services;
-            Configuration = configuration;
-            Environment = environment;
-        }
-
-        public IConfiguration Configuration { get; }
-
-        public IHostEnvironment Environment { get; }
-
-        public IServiceCollection Services { get; }
+        Services = services;
+        Configuration = configuration;
+        Environment = environment;
     }
+
+    public IConfiguration Configuration { get; }
+
+    public IHostEnvironment Environment { get; }
+
+    public IServiceCollection Services { get; }
 }

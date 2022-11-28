@@ -1,8 +1,7 @@
 ﻿using Microsoft.Extensions.Hosting;
 
-namespace ServiceProfiles
+namespace ServiceProfiles;
+
+public interface IHostServiceProfileContext : IServiceProfileContext<IHostEnvironment>
 {
-    public interface IHostServiceProfileContext : IServiceProfileContext<IHostEnvironment>
-    {
-    }
 }

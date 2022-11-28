@@ -1,10 +1,9 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.Hosting;
 
-namespace ServiceProfiles
+namespace ServiceProfiles;
+
+public interface IServiceProfileLoader<in TEnvironment> where TEnvironment : IHostEnvironment
 {
-    public interface IServiceProfileLoader<in TEnvironment> where TEnvironment : IHostEnvironment
-    {
-        IServiceProfileLoader<TEnvironment> LoadFromAssemblies(IServiceProfileContext<TEnvironment> context, params Assembly[] assemblies);
-    }
+    IServiceProfileLoader<TEnvironment> LoadFromAssemblies(IServiceProfileContext<TEnvironment> context, params Assembly[] assemblies);
 }

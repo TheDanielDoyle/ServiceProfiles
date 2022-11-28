@@ -1,9 +1,8 @@
 ﻿using Microsoft.Extensions.Hosting;
 
-namespace ServiceProfiles
+namespace ServiceProfiles;
+
+public interface IServiceProfile<in TEnvironment> where TEnvironment : IHostEnvironment
 {
-    public interface IServiceProfile<in TEnvironment> where TEnvironment : IHostEnvironment
-    {
-        void Configure(IServiceProfileContext<TEnvironment> context);
-    }
+    void Configure(IServiceProfileContext<TEnvironment> context);
 }

@@ -2,14 +2,13 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace ServiceProfiles
+namespace ServiceProfiles;
+
+public interface IServiceProfileContext<out TEnvironment> where TEnvironment : IHostEnvironment
 {
-    public interface IServiceProfileContext<out TEnvironment> where TEnvironment : IHostEnvironment
-    {
-        IConfiguration Configuration { get; }
+    IConfiguration Configuration { get; }
 
-        TEnvironment Environment { get; }
+    TEnvironment Environment { get; }
 
-        IServiceCollection Services { get; }
-    }
+    IServiceCollection Services { get; }
 }

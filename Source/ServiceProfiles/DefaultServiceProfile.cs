@@ -1,9 +1,8 @@
 ﻿using System.Reflection;
 
-namespace ServiceProfiles
+namespace ServiceProfiles;
+
+public abstract class DefaultServiceProfile
 {
-    public abstract class DefaultServiceProfile
-    {
-        protected Assembly ThisAssembly => GetType().Assembly;
-    }
+    protected Assembly ThisAssembly => GetType().Assembly;
 }
