@@ -1,21 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>ServiceProfiles</RootNamespace>
     <Authors>Daniel P. Doyle</Authors>
     <Product>Service Profiles</Product>
     <PackageId>TheDanielDoyle.ServiceProfiles</PackageId>
     <Description>A framework for splitting out the registration of services in IServiceCollection into profiles. No more large Startup.cs classes.</Description>
-    <Copyright>© 2022 Daniel P. Doyle</Copyright>
+    <Copyright>© 2024 Daniel P. Doyle</Copyright>
     <PackageProjectUrl>https://github.com/TheDanielDoyle/ServiceProfiles</PackageProjectUrl>
     <RepositoryUrl>https://github.com/TheDanielDoyle/ServiceProfiles</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="8.0.0" />
   </ItemGroup>
 
 </Project>
